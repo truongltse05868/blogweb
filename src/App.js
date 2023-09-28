@@ -1,121 +1,55 @@
-// import React from "react";
-// import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
-// import "./App.css";
-// import Work from "./pages/Work";
-// import Gallery from "./pages/Gallery";
-// import About from "./pages/About";
-// import Resume from "./pages/Resume";
-// import Introduction from "./Introduction";
-// function App() {
-//   // Tạo một đối tượng kiểu CSS để định dạng các mục menu
-//   const menuItemStyle = {
-
-//     fontFamily: "DM Mono", // Đặt kiểu chữ thành DM Mono
-//     marginRight: '48px',
-//   };
-//   const navbarStyle = {
-//     marginLeft: "160px", // Đặt khoảng cách lề trái cho chữ "Ngo Minh Hieu"
-//   };
-
-//   const menuStyle = {
-//     marginRight: "160px", // Đặt khoảng cách lề phải cho các mục menu
-//     backgroundColor: 'while',
-//   };
-
-//   return (
-//     <Router>
-//       <div className="container mt-5">
-//         <div className="d-flex justify-content-between align-items-center">
-//           <h1 style={navbarStyle}>Ngo Minh Hieu</h1>
-//           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-//             <button
-//               className="navbar-toggler"
-//               type="button"
-//               data-bs-toggle="collapse"
-//               data-bs-target="#navbarNav"
-//               aria-controls="navbarNav"
-//               aria-expanded="false"
-//               aria-label="Toggle navigation"
-//             >
-//               <span className="navbar-toggler-icon"></span>
-//             </button>
-//             <div className="collapse navbar-collapse" id="navbarNav" style={menuStyle}>
-//               <ul className="navbar-nav ml-auto">
-//                 <li className="nav-item">
-//                   <Link className="nav-link" to="/work" style={menuItemStyle}>
-//                     Work
-//                   </Link>
-//                 </li>
-//                 <li className="nav-item">
-//                   <Link
-//                     className="nav-link"
-//                     to="/gallery"
-//                     style={menuItemStyle}
-//                   >
-//                     Gallery
-//                   </Link>
-//                 </li>
-//                 <li className="nav-item">
-//                   <Link className="nav-link" to="/about" style={menuItemStyle}>
-//                     About
-//                   </Link>
-//                 </li>
-//                 <li className="nav-item">
-//                   <Link className="nav-link" to="/resume" style={menuItemStyle}>
-//                     Resume
-//                   </Link>
-//                 </li>
-//               </ul>
-//             </div>
-//           </nav>
-//         </div>
-//         <Routes>
-//           <Route path="/work" element={<Work />} />
-//           <Route path="/gallery" element={<Gallery />} />
-//           <Route path="/about" element={<About />} />
-//           <Route path="/resume" element={<Resume />} />
-//         </Routes>
-//         <Introduction />
-//       </div>
-//     </Router>
-//   );
-// }
-
-// export default App;
-
-
-import React, { useEffect } from 'react';
-import WebFont from 'webfontloader';
+import React, { useEffect } from "react";
+import WebFont from "webfontloader";
 import { Navbar, Nav, NavItem, NavLink, Container } from "react-bootstrap";
-  const fontstyle = {
-    fontFamily: 'DM Mono',
-    fontSize: '48px',
-    fontStyle: 'normal',
-    fontWeight: 500,
-    lineHeight: '58px',
-    paddingTop: 24,
-  };
-  const fontstyle2 = {
-    fontFamily: 'DM Mono',
-    fontSize: '32px',
-    fontStyle: 'normal',
-    fontWeight: 500,
-    lineHeight: '58px',
-    textAlign: 'center',
-    width: 1041,
-    height: 88,
-  };
-
+import Card from "./cartProduct";
+const fontstyle = {
+  fontFamily: "DM Mono",
+  fontSize: "48px",
+  fontStyle: "normal",
+  fontWeight: 500,
+  lineHeight: "58px",
+  paddingTop: 24,
+};
+const fontstyle2 = {
+  fontFamily: "DM Mono",
+  fontSize: "32px",
+  fontStyle: "normal",
+  fontWeight: 500,
+  lineHeight: "44px",
+  textAlign: "center",
+  width: 1041,
+  height: 88,
+};
+const fontstylemenu = {
+  fontFamily: "DM Mono",
+  fontSize: "24px",
+  fontStyle: "normal",
+  fontWeight: 300,
+  lineHeight: "32px",
+};
+const customStyle = {
+  display: "flex",
+  width: "784px",
+  height: "720px",
+  minWidth: "343px",
+  maxWidth: "784px",
+  minHeight: "320px",
+  maxHeight: "720px",
+  flexDirection: "column",
+  alignItems: "flex-start",
+  gap: "24px",
+  flexShrink: "0",
+};
 const App = () => {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ['DM Mono'],
+        families: ["DM Mono"],
       },
-      active: function() {
+      active: function () {
         // Font đã tải thành công, bạn có thể cập nhật trạng thái của ứng dụng ở đây nếu cần.
       },
-      inactive: function() {
+      inactive: function () {
         // Font không tải được, xử lý tại đây nếu cần.
       },
     });
@@ -130,17 +64,19 @@ const App = () => {
         <Container>
           <Navbar.Brand href="#">Ngo Minh Hieu</Navbar.Brand>
           <Nav>
-            <NavItem style={{ marginRight: 48 }}>
+            <NavItem style={{ marginRight: 48, fontstylemenu }}>
               <NavLink href="#">Word</NavLink>
             </NavItem>
-            <NavItem style={{ marginRight: 48 }}>
+            <NavItem style={{ marginRight: 48, fontstylemenu }}>
               <NavLink href="#">Gallery</NavLink>
             </NavItem>
-            <NavItem style={{ marginRight: 48 }}>
+            <NavItem style={{ marginRight: 48, fontstylemenu }}>
               <NavLink href="#">About</NavLink>
             </NavItem>
             <NavItem style={{ paddingRight: 160 }}>
-              <NavLink href="#">Resume</NavLink>
+              <NavLink href="#" style={{ fontstylemenu }}>
+                Resume
+              </NavLink>
             </NavItem>
           </Nav>
         </Container>
@@ -155,7 +91,7 @@ const App = () => {
             paddingRight: 160,
             display: "flex",
             flexDirection: "column",
-            alignItems: 'center',  // Căn giữa theo chiều ngang
+            alignItems: "center", // Căn giữa theo chiều ngang
             justifyContent: "center", // Căn giữa theo chiều dọc
             textAlign: "center", // Căn giữa văn bản theo chiều ngang
           }}
@@ -171,9 +107,49 @@ const App = () => {
             interface is always my top priority!
           </p>
         </section>
-        <section id="body">
-          <h1>Body</h1>
-          <p>This is the main content section of the website.</p>
+        <section id="body" style={{paddingLeft: 160, paddingRight: 160}}>
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+              <Card
+                imageUrl="p1.jpeg"
+                imageAlt="Mô tả hình ảnh 1"
+                title="Card title 1"
+                description="Design System Foundation - 2023"
+                link="#"
+                //buttonText="Go somewhere 1"
+              />
+            </div>
+            <div class="col">
+              <Card
+                imageUrl="p2.jpeg"
+                imageAlt="Mô tả hình ảnh 1"
+                title="Card title 1"
+                description="S Money - Quản lý tài chính cá nhân"
+                link="#"
+                buttonText="Go somewhere 1"
+              />
+            </div>
+            <div class="col">
+              <Card
+                imageUrl="p3.jpeg"
+                imageAlt="Mô tả hình ảnh 1"
+                title="Card title 1"
+                description="S Money - Quản lý tài chính cá nhân"
+                link="#"
+                buttonText="Go somewhere 1"
+              />
+            </div>
+            <div class="col">
+              <Card
+                imageUrl="p4.jpeg"
+                imageAlt="Mô tả hình ảnh 1"
+                title="Card title 1"
+                description="S Money - Quản lý tài chính cá nhân"
+                link="#"
+                buttonText="Go somewhere 1"
+              />
+            </div>
+          </div>
         </section>
       </div>
       <footer>
