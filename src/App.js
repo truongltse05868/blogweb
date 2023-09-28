@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import WebFont from "webfontloader";
 import { Navbar, Nav, NavItem, NavLink, Container } from "react-bootstrap";
 import Card from "./cartProduct";
+import Footer from "./footer";
 const fontstyle = {
   fontFamily: "DM Mono",
   fontSize: "48px",
@@ -153,7 +154,7 @@ const App = () => {
         </section>
       </div>
       <footer>
-        <p>Copyright &copy; 2023 My Blog</p>
+        <Footer />
       </footer>
     </div>
   );
