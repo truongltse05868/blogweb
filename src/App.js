@@ -84,6 +84,20 @@
 // export default App;
 import React from "react";
 import { Navbar, Nav, NavItem, NavLink, Container } from "react-bootstrap";
+  const fontstyle = {
+    fontFamily: 'DM Mono',
+    fontSize: '48px',
+    fontStyle: 'normal',
+    fontWeight: 500,
+    lineHeight: '58px',
+  };
+  const fontstyle2 = {
+    fontFamily: 'DM Mono',
+    fontSize: '32px',
+    fontStyle: 'normal',
+    fontWeight: 500,
+    lineHeight: '58px',
+  };
 
 const App = () => {
   return (
@@ -131,8 +145,8 @@ const App = () => {
             alt="anh o day"
             style={{ width: "300px", height: "300px" }}
           />
-          <h2>Xin chào, I'm Hiếu</h2>
-          <p>
+          <h2 style={fontstyle}>Xin chào, I'm Hiếu</h2>
+          <p style={fontstyle2}>
             I am a <strong>Product Design</strong> . Optimal and user-friendly
             interface is always my top priority!
           </p>
