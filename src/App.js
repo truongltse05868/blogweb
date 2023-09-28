@@ -82,7 +82,10 @@
 // }
 
 // export default App;
-import React from "react";
+
+
+import React, { useEffect } from 'react';
+import WebFont from 'webfontloader';
 import { Navbar, Nav, NavItem, NavLink, Container } from "react-bootstrap";
   const fontstyle = {
     fontFamily: 'DM Mono',
@@ -90,6 +93,7 @@ import { Navbar, Nav, NavItem, NavLink, Container } from "react-bootstrap";
     fontStyle: 'normal',
     fontWeight: 500,
     lineHeight: '58px',
+    paddingTop: 24,
   };
   const fontstyle2 = {
     fontFamily: 'DM Mono',
@@ -97,9 +101,25 @@ import { Navbar, Nav, NavItem, NavLink, Container } from "react-bootstrap";
     fontStyle: 'normal',
     fontWeight: 500,
     lineHeight: '58px',
+    textAlign: 'center',
+    width: 1041,
+    height: 88,
   };
 
 const App = () => {
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ['DM Mono'],
+      },
+      active: function() {
+        // Font đã tải thành công, bạn có thể cập nhật trạng thái của ứng dụng ở đây nếu cần.
+      },
+      inactive: function() {
+        // Font không tải được, xử lý tại đây nếu cần.
+      },
+    });
+  }, []);
   return (
     <div>
       <Navbar
@@ -147,7 +167,7 @@ const App = () => {
           />
           <h2 style={fontstyle}>Xin chào, I'm Hiếu</h2>
           <p style={fontstyle2}>
-            I am a <strong>Product Design</strong> . Optimal and user-friendly
+            I am a <strong>Product Design</strong>. Optimal and user-friendly
             interface is always my top priority!
           </p>
         </section>
